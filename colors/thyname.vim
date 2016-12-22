@@ -34,6 +34,7 @@ hi CursorLine guifg=NONE guibg=NONE guisp=NONE gui=underline ctermfg=NONE ctermb
 hi htmlString guifg=#ffffff guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
 hi JavaScriptStrings guifg=#ffffff guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
 hi Todo guifg=#ffffff guibg=NONE guisp=NONE gui=bold ctermfg=15 ctermbg=NONE cterm=NONE
+hi Underlined guifg=#ffffff guibg=NONE guisp=NONE gui=underline ctermfg=NONE ctermbg=NONE cterm=NONE				" tag:A href
 
 
 " 行数字
@@ -130,7 +131,6 @@ hi subtitle guifg=#000000 guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NO
 "hi LocalVariable guifg=#e51d42 guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
 "hi SpellBad guifg=#e51d42 guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
 "hi CTagsClass guifg=#e51d42 guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
-"hi Underlined guifg=#e51d42 guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
 "hi DiffAdd guifg=#e51d42 guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
 "hi TabLine guifg=#e51d42 guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
 "hi Clear guifg=#e51d42 guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
