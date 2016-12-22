@@ -5,18 +5,13 @@ a vim color scheme
 
 ## Install
 
-```sh
-mkdir -p ~/.vim/colors
-git clone https://github.com/rupertqin/ThyName.git ~/thyname
-cp ~/thyname/colors/thyname.vim ~/.vim/colors/ 
-```
+just copy `./colors/thyname.vim` to your path `~/.vim/colors/thyname.vim`
+than set colorscheme as `colorscheme thyname`
+
 
 ![](https://github.com/rupertqin/ThyName/blob/master/img/main_vsl02.jpg)
 
-![](https://github.com/rupertqin/ThyName/blob/master/img/Screen%20Shot%202016-12-22%20at%207.45.16%20AM.png)
-
-![](https://github.com/rupertqin/ThyName/blob/master/img/Screen%20Shot%202016-12-22%20at%207.45.35%20AM.png)
-
-![](https://github.com/rupertqin/ThyName/blob/master/img/Screen%20Shot%202016-12-22%20at%207.45.53%20AM.png)
-
-![](https://github.com/rupertqin/ThyName/blob/master/img/Screen%20Shot%202016-12-22%20at%208.07.54%20AM.png)
+![](https://github.com/rupertqin/ThyName/blob/master/img/1.png)
+![](https://github.com/rupertqin/ThyName/blob/master/img/2.png)
+![](https://github.com/rupertqin/ThyName/blob/master/img/3.png)
+![](https://github.com/rupertqin/ThyName/blob/master/img/4.png)
