@@ -24,7 +24,7 @@ hi StatusLineNC guifg=#000000 guibg=#87ceff guisp=#87ceff gui=NONE ctermfg=NONE 
 
 " 背景
 "hi Normal guifg=#ffffff guibg=#005fd7 guisp=#2f69c6 gui=NONE ctermfg=15 ctermbg=26 cterm=NONE
-hi Normal guifg=#ffffff guibg=#005fd7 guisp=#2f69c6 gui=NONE ctermfg=15 ctermbg=NONE cterm=NONE
+hi Normal guifg=#ffffff guibg=#005faf guisp=#5fafff gui=NONE ctermfg=15 ctermbg=25 cterm=NONE
 
 " absolute white
 hi Cursor guifg=#ffffff guibg=#aaaaaa guisp=#9ac0cd gui=bold ctermfg=NONE ctermbg=152 cterm=bold

@@ -11,7 +11,4 @@ than set colorscheme as `colorscheme thyname`
 
 ![](https://github.com/rupertqin/ThyName/blob/master/img/main_vsl02.jpg)
 
-![](https://github.com/rupertqin/ThyName/blob/master/img/1.png)
-![](https://github.com/rupertqin/ThyName/blob/master/img/2.png)
-![](https://github.com/rupertqin/ThyName/blob/master/img/3.png)
-![](https://github.com/rupertqin/ThyName/blob/master/img/4.png)
+![](https://github.com/rupertqin/ThyName/blob/master/img/5.png)
