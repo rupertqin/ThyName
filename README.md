@@ -5,7 +5,7 @@ a vim color scheme
 
 ## Install
 
-just copy `./colors/thyname.vim` to your path `~/.vim/colors/thyname.vim`
+just copy `./colors/thyname.vim` to your path `~/.vim/colors/thyname.vim`  
 than set colorscheme as `colorscheme thyname`
 
 
@@ -15,3 +15,9 @@ than set colorscheme as `colorscheme thyname`
 ![](https://github.com/rupertqin/ThyName/blob/master/img/2.png)
 ![](https://github.com/rupertqin/ThyName/blob/master/img/3.png)
 ![](https://github.com/rupertqin/ThyName/blob/master/img/4.png)
+
+## Resource
+
+[Xterm256_color_names_for_console_Vim](http://vim.wikia.com/wiki/Xterm256_color_names_for_console_Vim)
+
+[a tool to check syntax name](http://bytefluent.com/vivify/)
