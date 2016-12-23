@@ -19,6 +19,15 @@ set background=light
 
 `iTerm2 => Preferances => profiles => Colors => Color Presets => import (file)` 
 
+## oh-my-zsh color setting
+
+if you use oh-my-zsh, you can use my color setting.
+this theme `thy-name.zsh-theme` is base on 'halflife.zsh-theme'
+
+Copy to `~/.oh-my-zsh/themes/thy-name.zsh-theme`
+
+In `.zshrc`, add `ZSH_THEME="thy-name"`
+
 ## Background is important
 
 Since Vim in shell mode, the color is poor. It's encourage to use the iTerm2's bgColor as default bgColor, if not, set 
