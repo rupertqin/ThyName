@@ -5,10 +5,10 @@
 
 set background=light
 if version > 580
-	hi clear
-	if exists("syntax_on")
-		syntax reset
-	endif
+  hi clear
+  if exists("syntax_on")
+    syntax reset
+  endif
 endif
 
 set t_Co=256
@@ -22,19 +22,20 @@ hi Folded guifg=#ffffff guibg=#00008b guisp=#00008b gui=NONE ctermfg=15 ctermbg=
 hi PreCondit guifg=#ffffff guibg=NONE guisp=NONE gui=bold ctermfg=15 ctermbg=NONE cterm=bold
 hi StatusLineNC guifg=#000000 guibg=#87ceff guisp=#87ceff gui=NONE ctermfg=NONE ctermbg=117 cterm=NONE
 
-" 背景
+" background,  it's better use terminal's bgcolor as default, set ctermbg=NONE
 "hi Normal guifg=#ffffff guibg=#005fd7 guisp=#2f69c6 gui=NONE ctermfg=15 ctermbg=26 cterm=NONE
-hi Normal guifg=#ffffff guibg=#005faf guisp=#5fafff gui=NONE ctermfg=15 ctermbg=25 cterm=NONE
+"hi Normal guifg=#ffffff guibg=#3069c5 guisp=#5fafff gui=NONE ctermfg=15 ctermbg=25 cterm=NONE
+hi Normal guifg=#ffffff guibg=#3069c5 guisp=#5fafff gui=NONE ctermfg=15 ctermbg=NONE cterm=NONE
 
 " absolute white
 hi Cursor guifg=#ffffff guibg=#aaaaaa guisp=#9ac0cd gui=bold ctermfg=NONE ctermbg=152 cterm=bold
-hi Ignore guifg=#ffffff guibg=NONE guisp=NONE gui=bold ctermfg=15 ctermbg=NONE cterm=bold							" nerdtree bookmark left icon
+hi Ignore guifg=#ffffff guibg=NONE guisp=NONE gui=bold ctermfg=15 ctermbg=NONE cterm=bold             " nerdtree bookmark left icon
 hi htmlString guifg=#ffffff guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
 hi JavaScriptStrings guifg=#ffffff guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
 hi Todo guifg=#ffffff guibg=NONE guisp=NONE gui=bold ctermfg=15 ctermbg=NONE cterm=NONE
 hi CursorLine guifg=NONE guibg=NONE guisp=NONE gui=underline ctermfg=NONE ctermbg=NONE cterm=underline
 hi Underlined guifg=NONE guibg=NONE guisp=NONE gui=underline ctermfg=NONE ctermbg=NONE cterm=underline" tag a href
-hi Directory guifg=NONE guibg=NONE guisp=NONE gui=bold ctermfg=NONE ctermbg=NONE cterm=bold						" nerdtree dir
+hi Directory guifg=NONE guibg=NONE guisp=NONE gui=bold ctermfg=NONE ctermbg=NONE cterm=bold           " nerdtree dir
 
 
 " light white
@@ -44,33 +45,33 @@ hi Comment guifg=#87afd7 guibg=NONE guisp=NONE gui=NONE ctermfg=110 ctermbg=NONE
 hi LineNr guifg=#ffffff guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
 
 " light blue
-hi Keyword guifg=#86f6fe guibg=NONE guisp=NONE gui=NONE ctermfg=120 ctermbg=NONE cterm=NONE				    " quote do end
+hi Keyword guifg=#86f6fe guibg=NONE guisp=NONE gui=NONE ctermfg=120 ctermbg=NONE cterm=NONE           " quote do end
 hi String guifg=#86f6fe guibg=NONE guisp=NONE gui=NONE ctermfg=80 ctermbg=NONE cterm=bold
 hi MatchParen guifg=NONE guibg=#86f6fe guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
 
 " Cyan
-hi Macro guifg=#b2fff3 guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=bold					  " Macro name
-
+hi Macro guifg=#b2fff3 guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=bold            " Macro name
 
 " green
 hi StorageClass guifg=#6ae35a guibg=NONE guisp=NONE gui=NONE ctermfg=120 ctermbg=NONE cterm=NONE      "let var
+hi Keyword guifg=#6ae35a guibg=NONE guisp=NONE gui=NONE ctermfg=120 ctermbg=NONE cterm=NONE           " quote do end
 
 " orange yellow
 hi DefinedName guifg=#ffaf5f guibg=NONE guisp=NONE gui=NONE ctermfg=215 ctermbg=NONE cterm=NONE
 hi Number guifg=#ffaf5f guibg=NONE guisp=NONE gui=NONE ctermfg=215 ctermbg=NONE cterm=bold
 hi Boolean guifg=#ffaf5f guibg=NONE guisp=NONE gui=bold ctermfg=215 ctermbg=NONE cterm=NONE
-hi Special guifg=#ffaf5f guibg=NONE guisp=NONE gui=NONE ctermfg=215 ctermbg=NONE cterm=underline			" this
-hi Constant guifg=#ffaf5f guibg=NONE guisp=NONE gui=bold ctermfg=215 ctermbg=NONE cterm=bold					" __MODULE__  Math process
-hi Float guifg=#ffaf5f guibg=NONE guisp=NONE gui=NONE ctermfg=215 ctermbg=NONE cterm=NONE						  " float number
+hi Special guifg=#ffaf5f guibg=NONE guisp=NONE gui=NONE ctermfg=215 ctermbg=NONE cterm=underline      " this
+hi Constant guifg=#ffaf5f guibg=NONE guisp=NONE gui=bold ctermfg=215 ctermbg=NONE cterm=bold          " __MODULE__  Math process
+hi Float guifg=#ffaf5f guibg=NONE guisp=NONE gui=NONE ctermfg=215 ctermbg=NONE cterm=NONE             " float number
 hi Function guifg=#ffaf5f guibg=NONE guisp=NONE gui=NONE ctermfg=215 ctermbg=NONE cterm=NONE
 hi EnumerationValue guifg=#ffaf5f guibg=NONE guisp=NONE gui=NONE ctermfg=215 ctermbg=NONE cterm=NONE
 hi htmlTagName guifg=#ffaf5f guibg=NONE guisp=NONE gui=bold ctermfg=215 ctermbg=NONE cterm=bold
-hi Type guifg=#ffaf5f guibg=NONE guisp=NONE gui=NONE ctermfg=215 ctermbg=NONE cterm=NONE							" html tag attr
+hi Type guifg=#ffaf5f guibg=NONE guisp=NONE gui=NONE ctermfg=215 ctermbg=NONE cterm=NONE              " html tag attr
 
 " bright yellow
-hi Define guifg=#ffff5f guibg=NONE guisp=NONE gui=bold ctermfg=227 ctermbg=NONE cterm=bold					  " def defmodule
-hi Include guifg=#ffff5f guibg=NONE guisp=NONE gui=bold ctermfg=227 ctermbg=NONE cterm=bold				    " use import
-hi Statement guifg=#ffff5f guibg=NONE guisp=NONE gui=bold ctermfg=227 ctermbg=NONE cterm=bold			    " bookmark head, folder head
+hi Define guifg=#ffff5f guibg=NONE guisp=NONE gui=bold ctermfg=227 ctermbg=NONE cterm=bold            " def defmodule
+hi Include guifg=#ffff5f guibg=NONE guisp=NONE gui=bold ctermfg=227 ctermbg=NONE cterm=bold           " use import
+hi Statement guifg=#ffff5f guibg=NONE guisp=NONE gui=bold ctermfg=227 ctermbg=NONE cterm=bold         " bookmark head, folder head
 
 " pane 分界线
 hi VertSplit guifg=#000000 guibg=#ffffff guisp=#000000 gui=NONE ctermfg=100 ctermbg=255 cterm=NONE
@@ -139,5 +140,4 @@ hi subtitle guifg=#000000 guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NO
 "hi pythonBuiltin guifg=#e51d42 guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
 "hi phpStringSingle guifg=#e51d42 guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
 "hi phpStringDouble guifg=#e51d42 guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
-
 
