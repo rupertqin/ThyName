@@ -14,6 +14,21 @@ colorscheme thyname
 set background=light
 ```
 
+## Airline bar
+
+in your `.vimrc` add:
+
+```vim
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+let g:airline_theme = 'solarized'
+let g:airline#extensions#syntastic#enabled = 1
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tagbar#enabled = 1
+let g:airline_skip_empty_sections = 1
+```
+
 ## iTerm color preset
 #### There is a `iTerm2` color preset in `ThyName.itermcolors`, to make the shell match this vim colorscheme
 
@@ -28,16 +43,10 @@ Copy to `~/.oh-my-zsh/themes/thy-name.zsh-theme`
 
 In `.zshrc`, add `ZSH_THEME="thy-name"`
 
-## Background is important
-
-Since Vim in shell mode, the color is poor. It's encourage to use the iTerm2's bgColor as default bgColor, if not, set 
-`hi Normal ... ctermbg=NONE` to  `hi Normal ... ctermbg=25`
-
 
 ![](https://github.com/rupertqin/ThyName/blob/master/img/thyname.jpg)
 
 ![](https://github.com/rupertqin/ThyName/blob/master/img/1.png)
-
 
 ![](https://github.com/rupertqin/ThyName/blob/master/img/2.png)
 
