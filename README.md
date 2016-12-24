@@ -49,3 +49,5 @@ Since Vim in shell mode, the color is poor. It's encourage to use the iTerm2's b
 [a tool to check syntax name](http://bytefluent.com/vivify/)
 
 [npm color2xterm](https://www.npmjs.com/package/color2xterm)
+
+[vimscript syntax](http://ricostacruz.com/cheatsheets/vimscript.html)
