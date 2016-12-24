@@ -14,77 +14,93 @@ endif
 set t_Co=256
 let g:colors_name = "thyname"
 
+" Sets the highlighting for the given group
+function! s:HL(group, fg, bg, attr)
+    if !empty(a:fg)
+        exec "hi " . a:group . " guifg=" . a:fg[0] . " ctermfg=" . a:fg[1]
+    endif
+    if !empty(a:bg)
+        exec "hi " . a:group . " guibg=" . a:bg[0] . " ctermbg=" . a:bg[1]
+    endif
+    if a:attr != ""
+        exec "hi " . a:group . " gui=" . a:attr . " cterm=" . a:attr
+    endif
+endfunction
+
+let none              = ['NONE', 'NONE']
+let s:white           = ['#ffffff', '15']
+let s:grayWhite       = ['#87afd7', '111']
+let s:blue            = ['#3069c5', '25']
+let s:lightBlue       = ['#86f6fe', '80']
+let s:green           = ['#6ae35a', '120']
+let s:orange          = ['#ffaf5f', '215']
+
+
+call s:HL("Normal", s:white, s:blue, "")
+
 hi WildMenu guifg=NONE guibg=#7fffd4 guisp=#7fffd4 gui=NONE ctermfg=NONE ctermbg=122 cterm=NONE
 hi SpecialComment guifg=#ffdead guibg=NONE guisp=NONE gui=NONE ctermfg=223 ctermbg=NONE cterm=NONE
 hi Typedef guifg=#90ee90 guibg=NONE guisp=NONE gui=NONE ctermfg=120 ctermbg=NONE cterm=NONE
 hi Title guifg=#ebbb88 guibg=NONE guisp=NONE gui=NONE ctermfg=180 ctermbg=NONE cterm=NONE
 hi Folded guifg=#ffffff guibg=#00008b guisp=#00008b gui=NONE ctermfg=15 ctermbg=18 cterm=NONE
 hi PreCondit guifg=#ffffff guibg=NONE guisp=NONE gui=bold ctermfg=15 ctermbg=NONE cterm=bold
-hi StatusLineNC guifg=#000000 guibg=#87ceff guisp=#87ceff gui=NONE ctermfg=NONE ctermbg=117 cterm=NONE
-
-" background,  it's better use terminal's bgcolor as default, set ctermbg=NONE
-"hi Normal guifg=#ffffff guibg=#005fd7 guisp=#2f69c6 gui=NONE ctermfg=15 ctermbg=26 cterm=NONE
-"hi Normal guifg=#ffffff guibg=#3069c5 guisp=#5fafff gui=NONE ctermfg=15 ctermbg=25 cterm=NONE
-hi Normal guifg=#ffffff guibg=#3069c5 guisp=#5fafff gui=NONE ctermfg=15 ctermbg=NONE cterm=NONE
 
 " absolute white
-hi Cursor guifg=#ffffff guibg=#aaaaaa guisp=#9ac0cd gui=bold ctermfg=NONE ctermbg=152 cterm=bold
-hi Ignore guifg=#ffffff guibg=NONE guisp=NONE gui=bold ctermfg=15 ctermbg=NONE cterm=bold             " nerdtree bookmark left icon
-hi htmlString guifg=#ffffff guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
-hi JavaScriptStrings guifg=#ffffff guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
-hi Todo guifg=#ffffff guibg=NONE guisp=NONE gui=bold ctermfg=15 ctermbg=NONE cterm=NONE
-hi CursorLine guifg=NONE guibg=NONE guisp=NONE gui=underline ctermfg=NONE ctermbg=NONE cterm=underline
-hi Underlined guifg=NONE guibg=NONE guisp=NONE gui=underline ctermfg=NONE ctermbg=NONE cterm=underline" tag a href
-hi Directory guifg=NONE guibg=NONE guisp=NONE gui=bold ctermfg=NONE ctermbg=NONE cterm=bold           " nerdtree dir
+"call s:HL("Cursor", s:white, s:lightBlue, "")
+call s:HL("Ignore", s:white, "", "bold")                                                                " nerdtree bookmark left icon
+call s:HL("htmlString", s:white, "", "")
+call s:HL("JavaScriptStrings", s:white, "", "")
+call s:HL("Todo", s:white, "", "")
+call s:HL("Directory", s:white, none, "bold")                                                           " nerdtree dir
+call s:HL("LineNr", s:white, none, "")                                                            
 
+" empty
+call s:HL("CursorLine", none, none, "underline")
+call s:HL("Underlined", none, none, "underline")                                                        " tag a href
+call s:HL("VertSplit", none, none, "NONE")                                                              " pane 分界线
+call s:HL("NonText", none, none, "")                                                                    " 多余背景色
 
 " light white
-hi Comment guifg=#87afd7 guibg=NONE guisp=NONE gui=NONE ctermfg=110 ctermbg=NONE cterm=NONE
-
-" 行数字
-hi LineNr guifg=#ffffff guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
+call s:HL("Comment", s:grayWhite, none, "")
 
 " light blue
-hi Keyword guifg=#86f6fe guibg=NONE guisp=NONE gui=NONE ctermfg=120 ctermbg=NONE cterm=NONE           " quote do end
-hi String guifg=#86f6fe guibg=NONE guisp=NONE gui=NONE ctermfg=80 ctermbg=NONE cterm=bold
-hi MatchParen guifg=NONE guibg=#86f6fe guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
+call s:HL("MatchParen", "", s:lightBlue, "")
+call s:HL("String", s:lightBlue, "", "")
 
 " Cyan
 hi Macro guifg=#b2fff3 guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=bold            " Macro name
 
 " green
-hi StorageClass guifg=#6ae35a guibg=NONE guisp=NONE gui=NONE ctermfg=120 ctermbg=NONE cterm=NONE      "let var
-hi Keyword guifg=#6ae35a guibg=NONE guisp=NONE gui=NONE ctermfg=120 ctermbg=NONE cterm=NONE           " quote do end
+call s:HL("StorageClass", s:green, "", "")                                                            "let var
+call s:HL("Keyword", s:green, "", "")                                                                 " quote do end
 
 " orange yellow
-hi DefinedName guifg=#ffaf5f guibg=NONE guisp=NONE gui=NONE ctermfg=215 ctermbg=NONE cterm=NONE
-hi Number guifg=#ffaf5f guibg=NONE guisp=NONE gui=NONE ctermfg=215 ctermbg=NONE cterm=bold
-hi Boolean guifg=#ffaf5f guibg=NONE guisp=NONE gui=bold ctermfg=215 ctermbg=NONE cterm=NONE
-hi Special guifg=#ffaf5f guibg=NONE guisp=NONE gui=NONE ctermfg=215 ctermbg=NONE cterm=underline      " this
-hi Constant guifg=#ffaf5f guibg=NONE guisp=NONE gui=bold ctermfg=215 ctermbg=NONE cterm=bold          " __MODULE__  Math process
-hi Float guifg=#ffaf5f guibg=NONE guisp=NONE gui=NONE ctermfg=215 ctermbg=NONE cterm=NONE             " float number
-hi Function guifg=#ffaf5f guibg=NONE guisp=NONE gui=NONE ctermfg=215 ctermbg=NONE cterm=NONE
-hi EnumerationValue guifg=#ffaf5f guibg=NONE guisp=NONE gui=NONE ctermfg=215 ctermbg=NONE cterm=NONE
-hi htmlTagName guifg=#ffaf5f guibg=NONE guisp=NONE gui=bold ctermfg=215 ctermbg=NONE cterm=bold
-hi Type guifg=#ffaf5f guibg=NONE guisp=NONE gui=NONE ctermfg=215 ctermbg=NONE cterm=NONE              " html tag attr
+call s:HL("DefinedName", s:orange, none, "NONE")
+call s:HL("Number", s:orange, none, "bold")
+call s:HL("Boolean", s:orange, none, "bold")
+call s:HL("Special", s:orange, none, "underline")                                                     " this
+call s:HL("Constant", s:orange, none, "bold")                                                         " __MODULE__  Math process
+call s:HL("Float", s:orange, none, "NONE")
+call s:HL("Function", s:orange, none, "NONE")
+call s:HL("EnumerationValue", s:orange, none, "NONE")
+call s:HL("htmlTagName", s:orange, none, "bold")
+call s:HL("Type", s:orange, none, "NONE")                                                             " html tag attr
+
+
+
 
 " bright yellow
 hi Define guifg=#ffff5f guibg=NONE guisp=NONE gui=bold ctermfg=227 ctermbg=NONE cterm=bold            " def defmodule
 hi Include guifg=#ffff5f guibg=NONE guisp=NONE gui=bold ctermfg=227 ctermbg=NONE cterm=bold           " use import
 hi Statement guifg=#ffff5f guibg=NONE guisp=NONE gui=bold ctermfg=227 ctermbg=NONE cterm=bold         " bookmark head, folder head
 
-" pane 分界线
-hi VertSplit guifg=#000000 guibg=#ffffff guisp=#000000 gui=NONE ctermfg=100 ctermbg=255 cterm=NONE
 
-" 多余背景色
-hi NonText guifg=NONE guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
 
 hi Debug guifg=#ffdead guibg=NONE guisp=NONE gui=NONE ctermfg=223 ctermbg=NONE cterm=NONE
 hi PMenuSbar guifg=NONE guibg=#848688 guisp=#848688 gui=NONE ctermfg=NONE ctermbg=102 cterm=NONE
 hi Identifier guifg=#e0ffff guibg=NONE guisp=NONE gui=NONE ctermfg=195 ctermbg=NONE cterm=NONE
 hi SpecialChar guifg=#ffdead guibg=NONE guisp=NONE gui=NONE ctermfg=223 ctermbg=NONE cterm=NONE
 hi Conditional guifg=#90ee90 guibg=NONE guisp=NONE gui=NONE ctermfg=120 ctermbg=NONE cterm=NONE
-hi StatusLine guifg=#000000 guibg=#6ca6cd guisp=#6ca6cd gui=NONE ctermfg=NONE ctermbg=74 cterm=NONE
 hi Label guifg=#90ee90 guibg=NONE guisp=NONE gui=NONE ctermfg=120 ctermbg=NONE cterm=NONE
 hi PMenuSel guifg=#000000 guibg=#6ca6cd guisp=#6ca6cd gui=NONE ctermfg=NONE ctermbg=74 cterm=NONE
 hi Search guifg=#191970 guibg=#FFFFFF guisp=#FFFFFF gui=bold ctermfg=17 ctermbg=15 cterm=bold
@@ -108,12 +124,17 @@ hi PMenuThumb guifg=NONE guibg=#a4a6a8 guisp=#a4a6a8 gui=NONE ctermfg=NONE cterm
 hi Repeat guifg=#90ee90 guibg=NONE guisp=NONE gui=NONE ctermfg=120 ctermbg=NONE cterm=NONE
 hi Structure guifg=#90ee90 guibg=NONE guisp=NONE gui=NONE ctermfg=120 ctermbg=NONE cterm=NONE
 hi cursorim guifg=#192224 guibg=#536991 guisp=#536991 gui=NONE ctermfg=235 ctermbg=60 cterm=NONE
-hi subtitle guifg=#000000 guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
+hi subtitle guifg=#000000 guibg=#ffffff guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
+
+"hi TabLineFill guifg=#e51d42 guibg=#ffffff guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
+"hi TabLine guifg=#e51d42 guibg=#ffffff guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
+"hi StatusLine guifg=#eeeeee guibg=#ffffff guisp=#eeeeee gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
+"hi StatusLineNC guifg=#86f6fe guibg=#ffffff guisp=#87ceff gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
 
 " unknown
 "hi IncSearch guifg=#e51d42 guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
 "hi SignColumn guifg=#e51d42 guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
-"hi TabLineSel guifg=#e51d42 guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
+hi TabLineSel guifg=#e51d42 guibg=#ffffff guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
 "hi CTagsMember guifg=#e51d42 guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
 "hi CTagsGlobalConstant guifg=#e51d42 guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
 "hi DiffText guifg=#e51d42 guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
@@ -122,7 +143,6 @@ hi subtitle guifg=#000000 guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NO
 "hi CTagsGlobalVariable guifg=#e51d42 guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
 "hi SpellRare guifg=#e51d42 guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
 "hi Union guifg=#e51d42 guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
-"hi TabLineFill guifg=#e51d42 guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
 "hi VisualNOS guifg=#e51d42 guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
 "hi DiffDelete guifg=#e51d42 guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
 "hi CursorColumn guifg=#e51d42 guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
@@ -135,7 +155,6 @@ hi subtitle guifg=#000000 guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NO
 "hi SpellBad guifg=#e51d42 guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
 "hi CTagsClass guifg=#e51d42 guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
 "hi DiffAdd guifg=#e51d42 guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
-"hi TabLine guifg=#e51d42 guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
 "hi Clear guifg=#e51d42 guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
 "hi pythonBuiltin guifg=#e51d42 guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
 "hi phpStringSingle guifg=#e51d42 guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
