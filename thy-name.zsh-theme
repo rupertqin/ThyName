@@ -21,7 +21,7 @@ autoload -Uz vcs_info
 if [[ $TERM = *256color* || $TERM = *rxvt* ]]; then
     turquoise="%F{81}"
     orange="%F{215}"
-    purple="%F{219}"
+    purple="%F{81}"
     hotpink="%F{164}"
     limegreen="%F{118}"
 else
