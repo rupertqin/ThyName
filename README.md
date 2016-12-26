@@ -50,6 +50,10 @@ In `.zshrc`, add `ZSH_THEME="thy-name"`
 
 ![](https://github.com/rupertqin/ThyName/blob/master/img/2.png)
 
+## Macvim support thin strokes font in Retina
+
+`defaults write org.vim.MacVim AppleFontSmoothing -int 0`
+
 
 ## Resource
 

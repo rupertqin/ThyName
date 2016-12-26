@@ -14,15 +14,15 @@ let g:colors_name = "thyname"
 
 " *********************  DEFINE COLORS  *************************
 " ***************************************************************
-let none              	= ['NONE', 'NONE']
-let white               = ['#ffffff', '15']
-let grayWhite           = ['#87afd7', '111']
-let blue                = ['#3069c5', '25']
-let lightBlue           = ['#86f6fe', '80']
-let green               = ['#8BF767', '120']
-let orange              = ['#ffaf5f', '215']
-let yellow              = ['#ffff5f',  '227']
-let cyan                = ['#b2fff3', '159']
+let none                            = ['NONE', 'NONE']
+let white                           = ['#ffffff', '15']
+let grayWhite                       = ['#87afd7', '111']
+let blue                            = ['#3069c5', '25']
+let lightBlue                       = ['#86f6fe', '80']
+let green                           = ['#8BF767', '120']
+let orange                          = ['#ffaf5f', '215']
+let yellow                          = ['#ffff5f',  '227']
+let cyan                            = ['#b2fff3', '159']
 
 " *********************  VAREABLE MEANING   *************************
 " *******************************************************************
@@ -49,30 +49,30 @@ let cyan                = ['#b2fff3', '159']
 " ***********************************************************
 " set all
 function! s:HL(group, fg, bg, style)
-    if !empty(a:fg)
-        exec "hi " . a:group . " guifg=" . a:fg[0] . " ctermfg=" . a:fg[1]
-    endif
-    if !empty(a:bg)
-        exec "hi " . a:group . " guibg=" . a:bg[0] . " ctermbg=" . a:bg[1]
-    endif
-    if a:style != ""
-        exec "hi " . a:group . " gui=" . a:style . " cterm=" . a:style
-    endif
+  if !empty(a:fg)
+    exec "hi " . a:group . " guifg=" . a:fg[0] . " ctermfg=" . a:fg[1]
+  endif
+  if !empty(a:bg)
+    exec "hi " . a:group . " guibg=" . a:bg[0] . " ctermbg=" . a:bg[1]
+  endif
+  if a:style != ""
+    exec "hi " . a:group . " gui=" . a:style . " cterm=" . a:style
+  endif
 endfunction
 
 " set colors
 function! s:CL(group, fg, bg)
-    if !empty(a:fg)
-        exec "hi " . a:group . " guifg=" . a:fg[0] . " ctermfg=" . a:fg[1]
-    endif
-    if !empty(a:bg)
-        exec "hi " . a:group . " guibg=" . a:bg[0] . " ctermbg=" . a:bg[1]
-    endif
+  if !empty(a:fg)
+    exec "hi " . a:group . " guifg=" . a:fg[0] . " ctermfg=" . a:fg[1]
+  endif
+  if !empty(a:bg)
+    exec "hi " . a:group . " guibg=" . a:bg[0] . " ctermbg=" . a:bg[1]
+  endif
 endfunction
 
 " set style
 function! s:ST(group, style)
-    exec "hi " . a:group . " gui=" . a:style . " cterm=" . a:style
+  exec "hi " . a:group . " gui=" . a:style . " cterm=" . a:style
 endfunction
 
 " *********************  SETTING   *************************
@@ -82,22 +82,22 @@ call s:HL("Normal", white, blue, "NONE")
 
 " absolute white
 for w in ["Ignore", "htmlString", "JavaScriptStrings", "Todo", "Directory", "LineNr", "Identifier", "Operator", "Title"]
-    call s:HL(w, white, none, "")
+  call s:HL(w, white, none, "")
 endfor
 
 " Bold
 for w in ["Ignore", "Directory", "Boolean", "htmlTagName", "Special", "Identifier", "Macro"]
-    call s:ST(w, "bold")
+  call s:ST(w, "bold")
 endfor
 
 " underline
 for w in ["CursorLine", "Underlined"]
-    call s:ST(w, "underline")
+  call s:ST(w, "underline")
 endfor
 
 " empty
 for w in ["CursorLine", "Underlined", "VertSplit", "NonText"]
-    call s:CL(w, none, none)
+  call s:CL(w, none, none)
 endfor
 
 " gray white
@@ -106,29 +106,29 @@ call s:HL("Comment", grayWhite, none, "")
 " light blue
 call s:CL("MatchParen", none, lightBlue)
 for w in ["Macro", "Type", "String"]
-    call s:CL(w, lightBlue, none)
+  call s:CL(w, lightBlue, none)
 endfor
 
 " style none
 for w in ["Type", "VertSplit"]
-    call s:ST(w, "NONE")
+  call s:ST(w, "NONE")
 endfor
 
 " green
 for w in ["StorageClass", "Keyword", "PreProc"]
-    call s:CL(w, green, none)
+  call s:CL(w, green, none)
 endfor
 
 " orange
 for w in ["DefinedName", "Number", "Boolean", "Special", "Constant", "Float", "Function", "EnumerationValue", "htmlTagName", "Delimiter"]
-    call s:CL(w, orange, none)
+  call s:CL(w, orange, none)
 endfor
 
 " yellow
 for w in ["Define", "Include", "Statement", "Repeat"]
-    call s:HL(w, yellow, none, "bold")
+  call s:HL(w, yellow, none, "bold")
 endfor
-
+call s:CL("ExtraWhitespace", none, yellow)
 
 
 " *********************  UNKNOWN   *************************
