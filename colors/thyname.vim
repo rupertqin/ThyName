@@ -16,6 +16,7 @@ let g:colors_name = "thyname"
 " ***************************************************************
 let none                            = ['NONE', 'NONE']
 let white                           = ['#ffffff', '15']
+let black                           = ['#191970', '17']
 let grayWhite                       = ['#87afd7', '111']
 let blue                            = ['#3069c5', '25']
 let lightBlue                       = ['#86f6fe', '80']
@@ -23,6 +24,8 @@ let green                           = ['#8BF767', '120']
 let orange                          = ['#ffaf5f', '215']
 let yellow                          = ['#ffff5f',  '227']
 let cyan                            = ['#b2fff3', '159']
+let red                             = ['#ff005f', '12']
+let purple                          = ['#f065f8', '207']
 
 " *********************  VAREABLE MEANING   *************************
 " *******************************************************************
@@ -85,8 +88,13 @@ for w in ["Ignore", "htmlString", "JavaScriptStrings", "Todo", "Directory", "Lin
   call s:HL(w, white, none, "")
 endfor
 
+" white bg
+for w in ["Search", "IncSearch"]
+  call s:HL(w, blue, white, "NONE")
+endfor
+
 " Bold
-for w in ["Ignore", "Directory", "Boolean", "htmlTagName", "Special", "Identifier", "Macro"]
+for w in ["Ignore", "Directory", "Boolean", "htmlTagName", "Special", "Identifier", "Macro", "Title"]
   call s:ST(w, "bold")
 endfor
 
@@ -104,7 +112,6 @@ endfor
 call s:HL("Comment", grayWhite, none, "")
 
 " light blue
-call s:CL("MatchParen", none, lightBlue)
 for w in ["Macro", "Type", "String"]
   call s:CL(w, lightBlue, none)
 endfor
@@ -130,11 +137,13 @@ for w in ["Define", "Include", "Statement", "Repeat"]
 endfor
 call s:CL("ExtraWhitespace", none, yellow)
 
+" red
+call s:CL("MatchParen", none, red)
+
 
 " *********************  UNKNOWN   *************************
 " **********************************************************
 " hi Visual guifg=#ffffff guibg=#27408b guisp=#27408b gui=NONE ctermfg=15 ctermbg=18 cterm=NONE
-" hi Search guifg=#191970 guibg=#FFFFFF guisp=#FFFFFF gui=bold ctermfg=17 ctermbg=15 cterm=bold
 " hi Debug guifg=#ffdead guibg=NONE guisp=NONE gui=NONE ctermfg=223 ctermbg=NONE cterm=NONE
 " hi PMenuSbar guifg=NONE guibg=#848688 guisp=#848688 gui=NONE ctermfg=NONE ctermbg=102 cterm=NONE
 " hi SpecialChar guifg=#ffdead guibg=NONE guisp=NONE gui=NONE ctermfg=223 ctermbg=NONE cterm=NONE
@@ -148,7 +157,6 @@ call s:CL("ExtraWhitespace", none, yellow)
 "hi TabLine guifg=#e51d42 guibg=#ffffff guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
 "hi StatusLine guifg=#eeeeee guibg=#ffffff guisp=#eeeeee gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
 "hi StatusLineNC guifg=#86f6fe guibg=#ffffff guisp=#87ceff gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
-"hi IncSearch guifg=#e51d42 guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
 "hi SignColumn guifg=#e51d42 guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
 "hi TabLineSel guifg=#e51d42 guibg=#ffffff guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
 "hi CTagsMember guifg=#e51d42 guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE

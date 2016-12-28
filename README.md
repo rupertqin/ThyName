@@ -43,16 +43,32 @@ Copy to `~/.oh-my-zsh/themes/thy-name.zsh-theme`
 
 In `.zshrc`, add `ZSH_THEME="thy-name"`
 
+## Macvim support thin strokes font in Retina
+
+`defaults write org.vim.MacVim AppleFontSmoothing -int 0`
+
+## True color (include tmux, but vim-in-tmux's color is a little bit darker, don't know why, and it depends..)
+
+in `.vimrc`: 
+
+```vim
+if !has('gui')
+  if !empty($TMUX)
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+    " make bg transparent in vim-in-tmux mode, for bgColor's bug
+    highlight Normal ctermbg=NONE guibg=NONE
+  endif
+  set termguicolors
+endif
+```
+
 
 ![](https://github.com/rupertqin/ThyName/blob/master/img/thyname.jpg)
 
 ![](https://github.com/rupertqin/ThyName/blob/master/img/1.png)
 
 ![](https://github.com/rupertqin/ThyName/blob/master/img/2.png)
-
-## Macvim support thin strokes font in Retina
-
-`defaults write org.vim.MacVim AppleFontSmoothing -int 0`
 
 
 ## Resource
