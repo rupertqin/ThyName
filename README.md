@@ -3,6 +3,12 @@ a Vim ColorScheme & iTerm2 Color Preset
 
 ## Just tired of all dark vim color scheme, so come out a light one.
 
+![](https://github.com/rupertqin/ThyName/blob/master/img/thyname.jpg)
+
+![](https://github.com/rupertqin/ThyName/blob/master/img/1.png)
+
+![](https://github.com/rupertqin/ThyName/blob/master/img/2.png)
+
 ## Install
 
 copy `./colors/thyname.vim` to your path `~/.vim/colors/thyname.vim` 
@@ -62,14 +68,6 @@ if !has('gui')
   set termguicolors
 endif
 ```
-
-
-![](https://github.com/rupertqin/ThyName/blob/master/img/thyname.jpg)
-
-![](https://github.com/rupertqin/ThyName/blob/master/img/1.png)
-
-![](https://github.com/rupertqin/ThyName/blob/master/img/2.png)
-
 
 ## Resource
 
