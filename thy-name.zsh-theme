@@ -20,9 +20,9 @@ autoload -Uz vcs_info
 #use extended color pallete if available
 if [[ $TERM = *256color* || $TERM = *rxvt* ]]; then
     turquoise="%F{81}"
-    orange="%F{215}"
+    orange="%F{227}"
     purple="%F{15}"
-    hotpink="%F{207}"
+    hotpink="%F{215}"
     limegreen="%F{118}"
 else
     turquoise="$fg[cyan]"
